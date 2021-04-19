@@ -48,6 +48,13 @@ class MainActivity : AppCompatActivity() {
         am.repeatCount = 0
         set.addAnimation(am)
 
+        //4.TranslateAnimation座標x1,x2,y1,y2位移
+        //右下角座標 cl.getWidth(), cl.getHeight()
+        am = TranslateAnimation(cl.width.toFloat(), 0.0f, cl.height.toFloat(), 0.0f)
+        am.duration = 5000
+        am.repeatCount = 0
+        set.addAnimation(am)
+
         //將動畫特效組合設定到背景圖並開始執行動畫
         cl.startAnimation(set)
         return false
