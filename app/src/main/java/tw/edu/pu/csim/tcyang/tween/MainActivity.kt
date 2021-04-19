@@ -57,6 +57,12 @@ class MainActivity : AppCompatActivity() {
 
         //將動畫特效組合設定到背景圖並開始執行動畫
         cl.startAnimation(set)
+
+        //讀取xml方式所定義之特效
+        am = AnimationUtils.loadAnimation(this, R.anim.anim1)
+        am.setStartOffset(5000)
+        txv.startAnimation(am)
+
         return false
     }
 }
