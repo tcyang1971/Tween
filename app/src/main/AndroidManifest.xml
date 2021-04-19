@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@drawable/salmon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/salmon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tween">
         <activity android:name=".MainActivity">
