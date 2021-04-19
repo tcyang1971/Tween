@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.MotionEvent
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
+import android.view.animation.AnimationSet
+import android.view.animation.RotateAnimation
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -32,8 +34,19 @@ class MainActivity : AppCompatActivity() {
         //設定重複次數，-1為無限次數
         am.repeatCount = 0
 
-        //將動畫特效設定到背景圖並開始執行動畫
-        cl.startAnimation(am)
+        //0.特效組合 AnimationSet
+        val set = AnimationSet(true)
+        //加入特效組合
+        set.addAnimation(am)
+
+        //2.RotateAnimation 起始,最後旋轉角度
+        am = RotateAnimation(0.0f, 360.0f)
+        am.duration = 5000
+        am.repeatCount = 0
+        set.addAnimation(am)
+
+        //將動畫特效組合設定到背景圖並開始執行動畫
+        cl.startAnimation(set)
         return false
     }
 }
