@@ -2,10 +2,7 @@ package tw.edu.pu.csim.tcyang.tween
 
 import android.os.Bundle
 import android.view.MotionEvent
-import android.view.animation.AlphaAnimation
-import android.view.animation.Animation
-import android.view.animation.AnimationSet
-import android.view.animation.RotateAnimation
+import android.view.animation.*
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -41,6 +38,12 @@ class MainActivity : AppCompatActivity() {
 
         //2.RotateAnimation 起始,最後旋轉角度
         am = RotateAnimation(0.0f, 360.0f)
+        am.duration = 5000
+        am.repeatCount = 0
+        set.addAnimation(am)
+
+        //3.ScaleAnimation縮放x起,始倍率,y起,始倍率
+        am = ScaleAnimation(0.2f, 1.0f, 0.2f, 1.0f)
         am.duration = 5000
         am.repeatCount = 0
         set.addAnimation(am)
